@@ -1,0 +1,9 @@
+Creating Jar
+
+1. right click on project >> export >> java >> Jar File >> next >> browse (select the path and jar name) >> next >> next >> finish
+
+=============================================
+
+create new project 
+(add jar into this project , so that we can use the code)
+right click on the newly created project >> build path >> configure build path >> libraries tab >> Add External Jar (Select jar created above) >> apply and close

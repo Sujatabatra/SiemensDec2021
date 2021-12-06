@@ -1,0 +1,6 @@
+Naming Conventions for Java Indentifiers 
+
+1. ClassName should be in PascalCase 
+2. variableNames should be in camelCase
+3. methodNames should be in camelCase
+4. package name shlould be in lower case
