@@ -1,0 +1,5 @@
+Steps to create Java Project in eclipse
+
+File >> new >> other >> Java Project >> Give project Name >> select radio button use default JRE >> click next >> click finish
+
+Dialogue box will appear to ask, Open Java Perspective : Yes
