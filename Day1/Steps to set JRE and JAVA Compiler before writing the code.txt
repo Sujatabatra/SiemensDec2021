@@ -1,0 +1,5 @@
+Need to follow these steps once for every new workspace
+
+windows >> prefrences >> java >> java compiler >> 1.8
+Installed JRE >> Add >> standard VM  >> next >> JRE home(directory)- C:\Program Files\Java\jdk1.8.0_171\jre >> finish
+select the jre being picked by us  >> Apply and Close
