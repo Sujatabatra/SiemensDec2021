@@ -6,6 +6,31 @@ public class Tiger {
 	private int age;
 	private int weight;
 	
+	public Tiger() {
+		
+	}
+	/*
+	 * this is a reference variable which points to current object
+	 */
+	public Tiger(String color, int age, int weight) {
+		this.color = color;
+		this.age = age;
+		this.weight = weight;
+	}
+	
+	
+
+	public Tiger(String color, int age) {
+		super();
+		this.color = color;
+		this.age = age;
+	}
+	
+	
+	public Tiger(String color) {
+		super();
+		this.color = color;
+	}
 	public void setColor(String color) {
 		this.color = color;
 	}
