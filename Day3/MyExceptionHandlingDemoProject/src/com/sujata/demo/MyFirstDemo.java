@@ -47,10 +47,15 @@ public class MyFirstDemo {
 			System.out.println("Location "+location+" don't exist in an array");
 		}
 //		generic catch
-		catch(Exception exception) {
-			System.out.println("Something went wrong");
+//		catch(Exception exception) {
+//			System.out.println("Something went wrong");
+//		}
+		/*
+		 * irrespective of exception comes or don't handeled by handler or not finally block will get executed
+		 */
+		finally {
+			System.out.println("Hi I am finally Block!");
 		}
-		
 		System.out.println("Good Bye from Main!");
 
 	}
