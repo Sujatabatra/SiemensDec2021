@@ -1,0 +1,19 @@
+JDBC : Java DataBase Connectivity
+1. create java project
+2. right click >> configure >> convert to maven project ( a new file will get created i.e pom.xml)
+pom: project object model
+Maven is used to add jar in our project
+in pom.xml add the following dependency
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.27</version>
+		</dependency>
+
+	</dependencies>
+
+3. create database and table in MySQL
+4. create code
+
