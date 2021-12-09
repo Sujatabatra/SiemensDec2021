@@ -1,17 +1,17 @@
 package com.sujata.setdemos;
 
-import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class MyHashSetDemoClass {
+public class MyTreeSetDemoClass {
 
 	public static void main(String[] args) {
 		/*
-		 * HashSet is the unordered unique collection of objects
+		 * TreeSet is the SORTED unique collection of objects
 		 * and collection is auto growable and auto shrinkable
 		 */
-		Set<Integer> collection=new HashSet<Integer>();
+		Set<Integer> collection=new TreeSet<Integer>();
 		
 		System.out.println("Size of my Collection : "+collection.size());
 		System.out.println(collection);
