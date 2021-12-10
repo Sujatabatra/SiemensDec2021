@@ -42,13 +42,39 @@ public class EmployeePresentationImpl implements EmployeePresentation {
 				System.out.println(employee);
 			break;
 		case 3:
-
+			System.out.println("Enter Employee ID : ");
+			int eid=scanner.nextInt();
+			System.out.println("Enter Employee Name : ");
+			String name=scanner.next();
+			System.out.println("Enter Employee Designation : ");
+			String desig=scanner.next();
+			System.out.println("Enter Employee Department : ");
+			String deptt=scanner.next();
+			System.out.println("Enter Employee Salary : ");
+			int sal=scanner.nextInt();
+			Employee emp=new Employee(eid, name, desig, deptt, sal);
+			if(employeeService.insertEmployee(emp))
+				System.out.println("Employee Added");
+			else
+				System.out.println("Employee addition failed");
 			break;
 		case 4:
-
+			System.out.println("Enter employee ID to be deleted : ");
+			int empId=scanner.nextInt();
+			if(employeeService.removeEmployee(empId))
+				System.out.println("Employee Deleted");
+			else
+				System.out.println("Employee Deletion failed");
 			break;
 		case 5:
-
+			System.out.println("Enter Employee ID whoes salary you want to update : ");
+			int eId=scanner.nextInt();
+			System.out.println("Enter new Salary : ");
+			int salary=scanner.nextInt();
+			if(employeeService.updateEmployee(eId,salary))
+				System.out.println("Employee Updated");
+			else
+				System.out.println("Employee Updation failed");
 			break;
 		case 6:
 			System.out.println("Thanks for using Employee Management System");
