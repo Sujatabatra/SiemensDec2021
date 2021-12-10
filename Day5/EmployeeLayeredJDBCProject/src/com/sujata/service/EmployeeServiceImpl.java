@@ -15,4 +15,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDao.getAllEmployees();
 	}
 
+	@Override
+	public Employee searchEmployeeById(int empId) {
+		
+		return employeeDao.getEmployeeById(empId);
+	}
+
 }

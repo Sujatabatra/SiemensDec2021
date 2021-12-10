@@ -11,4 +11,5 @@ import com.sujata.bean.Employee;
 public interface EmployeeDao {
 
 	List<Employee> getAllEmployees();
+	Employee getEmployeeById(int id);
 }

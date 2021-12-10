@@ -61,4 +61,54 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return employeeList;
 	}
 
+	@Override
+	public Employee getEmployeeById(int id) {
+		Connection connection=null;
+		PreparedStatement preparedStatement=null;
+		Employee employee=null;
+		 try {
+//			 1. Connect
+//			 1.1 Register Driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+//			1.2 Connect to DataBase
+			connection=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/siemensdemo", "root", "sujata");
+		
+//			2. Query
+			preparedStatement=connection.prepareStatement("SELECT * FROM EMPLOYEE where ID=?");
+			preparedStatement.setInt(1, id);
+			
+			ResultSet resultSet= preparedStatement.executeQuery();
+			
+//			3. Process Result
+			if(resultSet.next()) {
+				int eid=resultSet.getInt("ID");
+				String name=resultSet.getString("NAME");
+				String desig=resultSet.getString("DESIGNATION");
+				String depart=resultSet.getString("DEPARTMENT");
+				int sal=resultSet.getInt("SALARY");
+				//store each row in an object of Employee class
+				employee=new Employee(id, name, desig, depart, sal);
+				
+			}
+			
+		 } catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		 finally {
+			 try {
+//				 4. close the connection
+				connection.close();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+		 }
+
+		return employee;
+	}
+
 }
