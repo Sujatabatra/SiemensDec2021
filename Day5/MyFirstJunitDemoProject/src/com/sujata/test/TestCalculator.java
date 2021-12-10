@@ -1,56 +1,57 @@
 package com.sujata.test;
 
+/*
+ * by static import we are importing all the static members of Assertions class
+ * means while calling static members of Assertions class we not not to use class name
+ */
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-/*
- * order of execution
- * 1. setUpBeforeClass
- * 
- * 2. setup
- * 3. TestCase1
- * 4. tearDown
- * 
- * 5. setUp
- * 6. TestCase2
- * 7. tearDown
- * 
- * 8. tearDownAfterClass
- */
+
+import com.sujata.demo.Calculator;
+import com.sujata.exception.NegativeNumberException;
+
 class TestCalculator {
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		System.out.println("setUpBeforeClass");
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-		System.out.println("tearDownAfterClass");
-	}
-
+	private Calculator calculator;
+	
 	@BeforeEach
 	void setUp() throws Exception {
-		System.out.println("setUp");
+		calculator=new Calculator();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		System.out.println("tearDown");
+		calculator=null;
 	}
 
 	@Test
-	void testDivide() {
-		System.out.println("Test Case 1");
+	void t001()throws NegativeNumberException {
+		assertEquals(5, calculator.divide(20, 4));
 	}
 
 	@Test
-	void testAdd() {
-		System.out.println("Test Case 2");
+	void t002()throws NegativeNumberException {
+		assertThrows(NegativeNumberException.class,()->calculator.divide(20, -2));
 	}
+	
+	@Test
+	void t003()throws NegativeNumberException {
+		assertThrows(NegativeNumberException.class,()->calculator.divide(-20, 2));
+	}
+	
+	@Test
+	void t004()throws NegativeNumberException {
+		assertThrows(ArithmeticException.class,()->calculator.divide(20, 0));
+	}
+	
+	@Test
+	void t005()throws NegativeNumberException {
+		assertEquals(0, calculator.divide(0, 3));
+	}
+	
+	
 
 }
