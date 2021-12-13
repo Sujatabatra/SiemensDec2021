@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dinesha" class="com.sujata.producer.Singer">
+		<constructor-arg name="name" value="Dinesha"></constructor-arg>
+		<constructor-arg name="song" value="LALALA"></constructor-arg>
+	</bean>
+
+	<bean id="priya" class="com.sujata.producer.Singer">
+		<constructor-arg name="name" value="Priya"></constructor-arg>
+		<constructor-arg name="song"
+			value="Akhiyo Ke Jharokhe Se"></constructor-arg>
+	</bean>
+
+	<bean id="shyamala" class="com.sujata.producer.Juggler">
+		<property name="name" value="Shyamala"></property>
+		<property name="balls" value="4"></property>
+	</bean>
+</beans>
