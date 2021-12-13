@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- To Specify all the classes whose lifecycle is supposed to be maintained 
+		by Spring Container i.e ApplicationContext -->
+
+	<!-- Constructor Injections : Giving value to the component private variables 
+		with constructor -->
+	<bean id="mrng" class="com.sujata.producer.GoodMorning">
+		<constructor-arg name="name" value="Ashok"></constructor-arg>
+	</bean>
+
+	<!-- Setter Injection : Giving value to the component private variables 
+		with setter -->
+	<bean id="eve" class="com.sujata.producer.GoodEvening">
+		<property name="name" value="Nikhil"></property>
+	</bean>
+
+</beans>
