@@ -15,6 +15,14 @@ public class PerformerMain {
 		
 		Performer performer2=(Performer)springContainer.getBean("shyamala");
 		performer2.perform();
+		
+		Performer performer3=(Performer)springContainer.getBean("kshitij");
+		performer3.perform();
+		
+		
+		Performer performer4=(Performer)springContainer.getBean("suresh");
+		performer4.perform();
+		
 	}
 
 }
