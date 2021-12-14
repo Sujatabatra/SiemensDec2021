@@ -1,0 +1,17 @@
+Steps tp create Spring Boot JDBC Project
+1. file >> new >> Spring starter
+>> give name of project
+select java 8
+give package name>>
+click next>>
+from new spring starter project depdendencies select MySql,JDBC API>>click next>> click finish
+
+in application.properties mention four properties
+1.driver class name  
+2. url
+3. usernae
+4. password
+
+create persistence , service and presentation layer
+
+in persistence layer make use of JdbcTemplate

@@ -1,0 +1,8 @@
+file >> springboot started project >> 
+1. give name of the project
+2. select java version 8
+3. give package name
+click next
+on dependency window ( select mysql)
+click next
+click finish
