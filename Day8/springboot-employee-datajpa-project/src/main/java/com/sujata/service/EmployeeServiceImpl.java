@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.sujata.bean.Employee;
 import com.sujata.persistence.EmployeeDao;
 
-
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -50,10 +49,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public boolean updateEmployee(int id, int salary) {
-//		int rows = employeeDao.updateEmployeeSalaryById(id, salary);
-//		if (rows > 0)
-//			return true;
-		return false;
+		employeeDao.updateSalaryById(id, salary);
+		return true;
+
 	}
 
 }

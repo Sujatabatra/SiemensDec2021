@@ -17,3 +17,10 @@ Note :
 Persistence Layer : Interface
 Service Layer : interface and its implementation class
 presentation Layer : interface and it implementation class
+
+if you want to add your own queries then
+1. add method in dao
+2. annotate it with @Query and write your query indside @Query annotation
+3. while writing the query make use of class name and property names instead of table name and column name
+4. if writing DML then also include @Modifying annotation
+4. if writing DQL then neeed not to write any additional annotation
