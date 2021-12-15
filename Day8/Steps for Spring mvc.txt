@@ -1,0 +1,21 @@
+Spring MVC Project
+
+1. create spring boot project with packaging as "war" >> click next
+2. From new Spring Starter Project Dependencies take "Spring Web"
+3. if 8080 port is busy on your system , modify application.properties by adding server.port="any port no"
+4. add two more properties in application.properties file as follows
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+5. add the following dependency in pom.xml to give support for JSP pages
+<dependency>
+	<groupId>org.apache.tomcat.embed</groupId>
+	<artifactId>tomcat-embed-jasper</artifactId>
+	<scope>provided</scope>
+</dependency>
+6. created a controller class by annotating it with "@Controller"
+7. In class create a public method whose return type is "ModelAndView" and annotate that method with @RequestMapping
+8. inside arc\main\webapp folder create a new folder with the name "WEB-INF"
+9. inside WEB-INF create a new folder with the name "views"
+10. inside views folder create a jsp page and add code to it
+11. add controller package path to @SpringBootApplication in main class
+
