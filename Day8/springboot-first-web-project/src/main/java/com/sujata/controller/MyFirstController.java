@@ -7,11 +7,20 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MyFirstController {
 
-	@RequestMapping("/my")
+	//Mapping Handler
+	@RequestMapping("/first")
 	public ModelAndView myFirstController() {
 		ModelAndView mv=new ModelAndView();
 		mv.setViewName("myview");
-		mv.addObject("message", "Welcome to the world of Spring");
+		mv.addObject("message", "Welcome to the world of Spring from First Controller");
+		return mv;
+	}
+	
+	@RequestMapping("/second")
+	public ModelAndView mySecondController() {
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("myview");
+		mv.addObject("message", "Welcome to the world of Spring from Second Controller!");
 		return mv;
 	}
 }
