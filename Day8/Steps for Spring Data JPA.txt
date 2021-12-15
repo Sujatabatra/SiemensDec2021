@@ -1,0 +1,19 @@
+Spring Data JPA
+
+1. Create Spring Boot project with MySql and Spring Data JPA dependencies
+2. write application.properties file
+3. create POJO and annotate it with @Entity,@Id,@Table,@Column as needed
+4. Annotate main class with @EntityScan
+5. create an interface by extending JPARepository interface
+6. with JPARepository<EntityName,TypeOfPrimaryKey> specify these information
+7. annotate the interface created in step 5 with @Repository and @Transactional Annotation
+8. Annotate main class with @EnableJPARepositories
+9. create service layer by creating one interface and its implementation class
+10. create presentation layer by creating one interface and its implementation class
+11. write in main and call presentation layer
+12. add all components base package name in @SpringBootApplication Annotation in main class
+
+Note :
+Persistence Layer : Interface
+Service Layer : interface and its implementation class
+presentation Layer : interface and it implementation class
