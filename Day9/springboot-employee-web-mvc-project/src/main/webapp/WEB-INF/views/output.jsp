@@ -8,10 +8,8 @@
 </head>
 <body>
 <h1>Employee Management System</h1>
-<a href="./listAllEmps">List All Employees</a><br><br>
-<a href="./searchEmpPage">Search Employee</a><br><br>
-<a href="./insertEmployeePage">Insert Employee</a><br><br>
-<a href="">Delete Employee</a><br><br>
-<a href="">Update Employee Salary</a>
+<h2>${message }</h2>
+<br><br>
+<a href="/">Go Back to Main Page</a>
 </body>
 </html>

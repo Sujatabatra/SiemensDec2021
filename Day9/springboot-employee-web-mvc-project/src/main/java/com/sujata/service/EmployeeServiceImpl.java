@@ -33,6 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee searchEmployeeById(int empId) {
 		Employee employee=null;
 		try {
+			System.out.println("Inside Service");
 		employee =employeeDao.getById(empId);
 		}
 		catch(EntityNotFoundException ex) {

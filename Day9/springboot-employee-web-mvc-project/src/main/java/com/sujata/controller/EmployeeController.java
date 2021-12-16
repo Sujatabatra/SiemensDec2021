@@ -46,10 +46,42 @@ public class EmployeeController {
 	@RequestMapping("/searchEmployee")
 	public ModelAndView searchEmployeeController(HttpServletRequest request) {
 		ModelAndView modelAndView=new ModelAndView();
+		
 		String eId=request.getParameter("empId");
+		
 		Employee emp=employeeService.searchEmployeeById(Integer.parseInt(eId));
+		
 		modelAndView.addObject("employee", emp);
 		modelAndView.setViewName("showEmployee");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/insertEmployeePage")
+	public ModelAndView insertEmployeePageController() {
+		return new ModelAndView("inputEmpDetails");
+	}
+	
+	@RequestMapping("/saveEmp")
+	public ModelAndView insertEmployeeController(HttpServletRequest request) {
+		ModelAndView modelAndView=new ModelAndView();
+		
+		int id=Integer.parseInt(request.getParameter("eId"));
+		String name=request.getParameter("eName");
+		String des=request.getParameter("eDesig");
+		String dep=request.getParameter("eDeptt");
+		int sal=Integer.parseInt(request.getParameter("eSal"));
+		
+		Employee employee=new Employee(id, name, des, dep, sal);
+		String message=null;
+		if(employeeService.insertEmployee(employee))
+			message="Employee Added Successfully";
+		else
+			message="Employee Insertion Failed";
+		
+		modelAndView.addObject("message", message);
+		modelAndView.setViewName("output");
+		
 		return modelAndView;
 	}
 }
