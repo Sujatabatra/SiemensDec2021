@@ -2,6 +2,8 @@ package com.sujata.service;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -29,8 +31,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee searchEmployeeById(int empId) {
-
-		return employeeDao.getById(empId);
+		Employee employee=null;
+		try {
+		employee =employeeDao.getById(empId);
+		}
+		catch(EntityNotFoundException ex) {
+			System.out.println("hello");
+		}
+		return employee;
 	}
 
 	@Override

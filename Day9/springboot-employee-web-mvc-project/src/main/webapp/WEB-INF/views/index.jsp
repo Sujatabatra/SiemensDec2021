@@ -9,7 +9,7 @@
 <body>
 <h1>Employee Management System</h1>
 <a href="./listAllEmps">List All Employees</a><br><br>
-<a href="">Search Employee</a><br><br>
+<a href="./searchEmpPage">Search Employee</a><br><br>
 <a href="">Insert Employee</a><br><br>
 <a href="">Delete Employee</a><br><br>
 <a href="">Update Employee Salary</a>

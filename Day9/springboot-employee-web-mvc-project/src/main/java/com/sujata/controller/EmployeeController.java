@@ -2,6 +2,8 @@ package com.sujata.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +32,24 @@ public class EmployeeController {
 		mv.addObject("employees", employeeList);
 		mv.setViewName("showAllEmployees");
 		return mv;
+	}
+	
+	@RequestMapping("/searchEmpPage")
+	public ModelAndView searchEmployeePageController() {
+		return new ModelAndView("inputForEmpSearch");
+	}
+	
+	/*
+	 * Whenever you want to read form data in current controller,
+	 * create an argument of type HttpServletRequest
+	 */
+	@RequestMapping("/searchEmployee")
+	public ModelAndView searchEmployeeController(HttpServletRequest request) {
+		ModelAndView modelAndView=new ModelAndView();
+		String eId=request.getParameter("empId");
+		Employee emp=employeeService.searchEmployeeById(Integer.parseInt(eId));
+		modelAndView.addObject("employee", emp);
+		modelAndView.setViewName("showEmployee");
+		return modelAndView;
 	}
 }
