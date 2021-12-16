@@ -11,7 +11,7 @@
 <a href="./listAllEmps">List All Employees</a><br><br>
 <a href="./searchEmpPage">Search Employee</a><br><br>
 <a href="./insertEmployeePage">Insert Employee</a><br><br>
-<a href="">Delete Employee</a><br><br>
-<a href="">Update Employee Salary</a>
+<a href="./deleteEmployeePage">Delete Employee</a><br><br>
+<a href="./updateEmpSalaryPage">Update Employee Salary</a>
 </body>
 </html>

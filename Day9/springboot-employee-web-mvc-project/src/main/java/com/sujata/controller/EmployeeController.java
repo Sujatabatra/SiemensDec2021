@@ -84,4 +84,47 @@ public class EmployeeController {
 		
 		return modelAndView;
 	}
+	
+	@RequestMapping("/deleteEmployeePage")
+	public ModelAndView deleteEmployeePageController() {
+		return new ModelAndView("inputForEmpDelete");
+	}
+	
+	@RequestMapping("/deleteEmployee")
+	public ModelAndView deleteEmployeeController(HttpServletRequest request) {
+		ModelAndView modelAndView=new ModelAndView();
+		
+		int id=Integer.parseInt(request.getParameter("empId"));
+		String message=null;
+		if(employeeService.removeEmployee(id))
+			message="Employee Deleted Successfully!";
+		else
+			message="Employee Deletion Failed";
+		
+		modelAndView.addObject("message", message);
+		modelAndView.setViewName("output");
+		return modelAndView;
+	}
+	
+	@RequestMapping("/updateEmpSalaryPage")
+	public ModelAndView updateEmployeeSalaryPageController() {
+		return new ModelAndView("inputForEmpSalUpdate");
+	}
+	
+	@RequestMapping("/updateEmployeeSalary")
+	public ModelAndView updateEmployeeSalaryController(HttpServletRequest request) {
+		ModelAndView modelAndView=new ModelAndView();
+		
+		int id=Integer.parseInt(request.getParameter("empId"));
+		int sal=Integer.parseInt(request.getParameter("empSal"));
+		String message=null;
+		if(employeeService.updateEmployee(id,sal))
+			message="Employee Salary Updated Successfully!";
+		else
+			message="Employee Salary Updation Failed";
+		
+		modelAndView.addObject("message", message);
+		modelAndView.setViewName("output");
+		return modelAndView;
+	}
 }
