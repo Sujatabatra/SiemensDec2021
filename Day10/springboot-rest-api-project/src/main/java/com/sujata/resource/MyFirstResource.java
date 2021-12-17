@@ -2,6 +2,7 @@ package com.sujata.resource;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,5 +17,11 @@ public class MyFirstResource {
 	public String secondResource() {
 		return "<h1>Welcome to first Rest API</h1>";
 	}
+	
+	@GetMapping(path="/greet/{name}")
+	public String welcomeResource(@PathVariable("name") String na) {
+		return "Welcome "+na+"!";
+	}
+	
 	
 }
