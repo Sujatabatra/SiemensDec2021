@@ -5,12 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 /*
  * if the class name and table name are same then
  * @Table is optional
  */
 //@Table(name="Employee")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Employee {
 	@Id
 	@Column(name = "id")
